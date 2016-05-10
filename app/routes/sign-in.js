@@ -3,6 +3,11 @@ import Ember from 'ember';
 const { set } = Ember;
 
 export default Ember.Route.extend({
+  beforeModel() {
+    if (this.get('session.isAuthenticated')) {
+      this.transitionTo('home');
+    }
+  },
   signInWith(provider) {
     const session = this.get('session');
     return this.get('session').open(provider).then(() => {
@@ -10,7 +15,7 @@ export default Ember.Route.extend({
         session.attemptedTransition.retry();
         session.attemptedTransition = null;
       } else {
-        this.transitionTo('index');
+        this.transitionTo('home');
       }
     });
   },

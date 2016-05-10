@@ -3,7 +3,8 @@
     "server",
     "document",
     "window",
-    "-Promise"
+    "-Promise",
+    "localStorage"
   ],
   "browser": true,
   "boss": true,
