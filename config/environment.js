@@ -16,6 +16,17 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+
+    apiUrl: 'http://localhost:4000/api',
+
+    torii: {
+      sessionServiceName: 'session',
+      providers: {
+        'github-oauth2': {
+          apiKey: '6db1eeaf037380c41c00'
+        }
+      }
     }
   };
 
@@ -25,6 +36,7 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV['ember-cli-mirage'] = { enabled: false };
   }
 
   if (environment === 'test') {

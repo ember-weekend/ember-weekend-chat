@@ -1,1 +1,5 @@
-{{outlet}}
+{{#if error}}
+<p class="error">{{error}}</p>
+{{/if}}
+
+<button id="github" {{action "signInWithGithub" }}>Sign In With Github</button>
