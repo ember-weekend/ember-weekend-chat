@@ -1,7 +1,8 @@
-# Ember-weekend-admin
+# Ember Weekend Chat
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+A simple chat demo using Phoenix channels.
+
+Developed for use at Modern Web training.
 
 ## Prerequisites
 
