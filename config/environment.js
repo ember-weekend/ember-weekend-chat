@@ -25,7 +25,7 @@ module.exports = function(environment) {
       sessionServiceName: 'session',
       providers: {
         'github-oauth2': {
-          apiKey: '6db1eeaf037380c41c00'
+          apiKey: 'ad174da1dca66210495f'
         }
       }
     }
