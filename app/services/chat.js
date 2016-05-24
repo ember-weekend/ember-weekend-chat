@@ -38,8 +38,8 @@ export default PhoenixSocket.extend({
       }]
     });
   },
-  send(message) {
-    this.get('channel').push("message", { content: message });
+  send(content) {
+    this.get('channel').push("message", { content });
   },
   connect() {
     const token = get(this, 'token');
