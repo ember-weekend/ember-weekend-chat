@@ -1,5 +1,6 @@
 import Ember from 'ember';
 import PhoenixSocket from 'phoenix/services/phoenix-socket';
+import config from '../config/environment';
 const { get } = Ember;
 
 export default PhoenixSocket.extend({
@@ -38,11 +39,10 @@ export default PhoenixSocket.extend({
     });
   },
   send(message) {
-    console.log(message);
     this.get('channel').push("message", { content: message });
   },
-  connect(url) {
+  connect() {
     const token = get(this, 'token');
-    this._super(url, { params: { token } });
+    this._super(config.chatUrl, { params: { token } });
   }
 });

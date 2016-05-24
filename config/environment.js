@@ -19,6 +19,7 @@ module.exports = function(environment) {
     },
 
     apiUrl: 'http://localhost:4000/api',
+    chatUrl: 'ws://localhost:4000/socket',
 
     torii: {
       sessionServiceName: 'session',
