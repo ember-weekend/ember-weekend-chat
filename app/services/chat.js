@@ -12,7 +12,28 @@ export default PhoenixSocket.extend({
     channel.on("message", this.newMessage.bind(this));
   },
   newMessage(message) {
-    console.log(message);
+    get(this, 'store').pushPayload({
+      data: {
+        id: message.id,
+        type: 'messages',
+        attributes: {
+          room: message.room,
+          content: message.content,
+          'created-at': message.inserted_at
+        },
+        relationships: {
+          user: { data: { type: 'users', id: message.user_id } }
+        }
+      },
+      included: [{
+        id: message.user_id,
+        type: 'users',
+        attributes: {
+          name: message.user_name,
+          username: message.username
+        },
+      }]
+    });
   },
   connect(url) {
     const token = get(this, 'token');
