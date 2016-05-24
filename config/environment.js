@@ -18,8 +18,8 @@ module.exports = function(environment) {
       // when it is created
     },
 
-    apiUrl: 'http://localhost:4000/api',
-    chatUrl: 'ws://localhost:4000/socket',
+    apiUrl: 'https://ember-weekend-chat-api.herokuapp.com/api',
+    chatUrl: 'wss://ember-weekend-chat-api.herokuapp.com/socket',
 
     torii: {
       sessionServiceName: 'session',
