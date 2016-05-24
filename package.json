@@ -39,6 +39,7 @@
     "ember-data": "^2.4.2",
     "ember-export-application-global": "^1.0.5",
     "ember-load-initializers": "^0.5.1",
+    "ember-phoenix": "0.0.5",
     "ember-resolver": "^2.0.3",
     "loader.js": "^4.0.1",
     "torii": "0.8.0"
