@@ -10,5 +10,9 @@
       </div>
     {{/each}}
   </div>
-  {{bs-input value=message}}
+  {{#bs-form action="send"}}
+    {{#bs-form-group}}
+      {{bs-input value=message placeholder="Message..."}}
+    {{/bs-form-group}}
+ {{/bs-form}}
 </div>

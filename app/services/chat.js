@@ -7,9 +7,11 @@ export default PhoenixSocket.extend({
   session: Ember.inject.service(),
   currentUser: Ember.computed.alias('session.currentUser'),
   token: Ember.computed.alias('currentUser.sessions.firstObject.token'),
+  channel: null,
   subscribe(room) {
     const channel = this.joinChannel(`rooms:${room}`, {});
     channel.on("message", this.newMessage.bind(this));
+    this.set('channel', channel);
   },
   newMessage(message) {
     get(this, 'store').pushPayload({
@@ -34,6 +36,10 @@ export default PhoenixSocket.extend({
         },
       }]
     });
+  },
+  send(message) {
+    console.log(message);
+    this.get('channel').push("message", { content: message });
   },
   connect(url) {
     const token = get(this, 'token');
