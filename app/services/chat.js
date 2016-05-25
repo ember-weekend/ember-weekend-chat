@@ -33,7 +33,8 @@ export default PhoenixSocket.extend({
         type: 'users',
         attributes: {
           name: message.user_name,
-          username: message.username
+          username: message.username,
+          thumbnail: message.user_thumbnail
         },
       }]
     });
