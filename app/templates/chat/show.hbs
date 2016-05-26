@@ -2,12 +2,7 @@
   <div class="list-group">
     {{#each messages as |message|}}
       <div class="list-group-item">
-        <img src={{message.user.thumbnail}} />
-        <span class="list-group-item-heading name">{{message.user.name}}</span>
-        -
-        <span class="date">{{moment-from-now message.createdAt}}</span>
-        :
-        <span class="list-group-item-text content">{{message.content}}</span>
+        {{chat-message message=message}}
       </div>
     {{/each}}
   </div>
