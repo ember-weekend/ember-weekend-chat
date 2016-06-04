@@ -43,7 +43,7 @@ test('user signs in with github', function(assert) {
     .signInWithGithub();
 
   andThen(function() {
-    assert.equal(currentURL(), '/');
+    assert.equal(currentURL(), '/chat/lobby');
   });
 });
 
@@ -82,6 +82,6 @@ test('already signed in user is redirected to home page', function(assert) {
   signIn.visit();
 
   andThen(function() {
-    assert.equal(currentURL(), '/');
+    assert.equal(currentURL(), '/chat/lobby');
   });
 });
